@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbiosis Admission Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Internal CSS */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .error-message {
+            color: #d9534f;
+            font-size: 0.9em;
+            margin-top: 5px;
+            display: none;
+        }
+        .success-message {
+            color: #5cb85c;
+            text-align: center;
+            font-weight: bold;
+            display: none;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Symbiosis Form</h2>
+        <div id="success" class="success-message">Registration Successful!</div>
+        <form id="registrationForm">
+            <div class="form-group">
+                <label for="email">Email ID:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email">
+                <div id="emailError" class="error-message">Please enter a valid email.</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password">
+                <div id="passwordError" class="error-message">Password must be at least 6 characters.</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <input type="password" id="confirm_password" name="confirm_password" placeholder="Confirm your password">
+                <div id="confirmPasswordError" class="error-message">Passwords do not match.</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Gender:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="gender_male" name="gender" value="Male">
+                    <label for="gender_male">Male</label>
+                    <input type="checkbox" id="gender_female" name="gender" value="Female">
+                    <label for="gender_female">Female</label>
+                    <input type="checkbox" id="gender_other" name="gender" value="Other">
+                    <label for="gender_other">Other</label>
+                </div>
+                <div id="genderError" class="error-message">Please select exactly one gender option.</div>
+            </div>
+            
+            <div class="form-group">
+                <label for="course">Course:</label>
+                <select id="course" name="course">
+                    <option value="">-- Select Course --</option>
+                    <option value="BBA">BBA</option>
+                    <option value="BCA">BCA</option>
+                    <option value="B.Tech">B.Tech</option>
+                    <option value="MBA">MBA</option>
+                </select>
+                <div id="courseError" class="error-message">Please select a course.</div>
+            </div>
+            
+            <button type="submit" id="submitBtn">Register</button>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
